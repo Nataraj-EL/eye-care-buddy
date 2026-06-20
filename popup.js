@@ -159,7 +159,8 @@ document.getElementById('testBreak').addEventListener('click', () => {
     title: 'EyeCare Buddy - Take a Break !',
     message: message,
     iconUrl: 'icons/icon-48.png',
-    priority: 2
+    priority: 2,
+    buttons: [{ title: 'Ok' }]
   });
   showToast('Test notification sent!');
 });

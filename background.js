@@ -73,7 +73,8 @@ async function triggerBreakNotification() {
     message: message,
     iconUrl: 'icons/icon-48.png',
     priority: 2,
-    requireInteraction: true
+    requireInteraction: true,
+    buttons: [{ title: 'Ok' }]
   });
 }
 
