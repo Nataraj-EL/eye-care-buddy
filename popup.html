@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EyeCare Buddy - Take a Break !</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="24" cy="24" rx="22" ry="15" stroke="#22D7A5" stroke-width="3"/>
+          <circle cx="24" cy="24" r="8" fill="#22D7A5"/>
+          <circle cx="24" cy="24" r="4" fill="white"/>
+          <circle cx="26" cy="22" r="1.5" fill="#22D7A5" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1>EyeCare Buddy</h1>
+        <p class="tagline">20-20-20 Rule Tracker</p>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-icon">⏱️</div>
+        <div class="stat-content">
+          <div class="stat-value" id="browsingTime">0h 0m</div>
+          <div class="stat-label">Today's browsing</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">☕</div>
+        <div class="stat-content">
+          <div class="stat-value" id="breaksTaken">0</div>
+          <div class="stat-label">Breaks taken</div>
+        </div>
+      </div>
+      <div class="stat-card full-width">
+        <div class="stat-icon">🔔</div>
+        <div class="stat-content">
+          <div class="stat-value" id="nextBreak">—</div>
+          <div class="stat-label">Next reminder in</div>
+        </div>
+        <div class="interval-badge" id="intervalBadge">20 min</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="ratingSection" class="rating-section hidden">
+      <div class="rating-header">
+        <span class="rating-emoji">👁️</span>
+        <div>
+          <h2>How are your eyes?</h2>
+          <p>Rate your eye strain after this break</p>
+        </div>
+      </div>
+      <div class="rating-buttons">
+        <button class="rating-btn" data-rating="none" data-next="25">
+          <span class="rating-face">😄</span>
+          <span class="rating-text">No strain</span>
+          <span class="rating-interval">→ 25 min</span>
+        </button>
+        <button class="rating-btn" data-rating="mild" data-next="20">
+          <span class="rating-face">😐</span>
+          <span class="rating-text">Mild strain</span>
+          <span class="rating-interval">→ 20 min</span>
+        </button>
+        <button class="rating-btn" data-rating="severe" data-next="15">
+          <span class="rating-face">😣</span>
+          <span class="rating-text">Severe strain</span>
+          <span class="rating-interval">→ 15 min</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="noRating" class="tip-section">
+      <p class="tip-text">
+        💡 <strong>20-20-20 Rule:</strong> Every 20 minutes, look at something
+        <strong>20 feet away</strong> for <strong>20 seconds</strong>.
+      </p>
+    </div>
+
+    <div class="footer">
+      <button id="testBreak" class="btn-secondary">Test Notification</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

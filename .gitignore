@@ -1,0 +1,17 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+*.local
+
+# Chrome Extension Packages
+*.zip
+*.crx
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
