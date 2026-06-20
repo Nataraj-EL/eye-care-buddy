@@ -1,62 +1,174 @@
-# EyeCare Buddy 👁️
+# EyeCare Buddy
 
-**EyeCare Buddy** is a modern, privacy-focused Chrome Extension (Manifest V3) designed to help you follow the **20-20-20 rule** and reduce eye strain while working on your computer.
+A lightweight, adaptive Chrome extension that helps developers reduce eye strain by intelligently reminding them to take breaks and follow the **20-20-20 rule**.
 
-The 20-20-20 rule states: *Every 20 minutes, look at something at least 20 feet away for at least 20 seconds.*
+---
+
+## Why I Built This
+
+As an aspiring developer, I spend most of my day and often nights in front of digital screens.
+
+Laptop. Mobile. Documentation. Tutorials. Coding. Repeat.
+
+Over time, I started noticing something worrying.
+
+My eyes were constantly red. The blood vessels in my eyes became visibly swollen, and sometimes my eyes would hurt after hours of continuous screen time. Honestly, there were days when I looked exactly like a drunk😭.
+
+One day, while discussing this with my mom, she gave me the simplest advice:
+
+> **"Just close the laptop and don't use it for so long."**
+
+And she's absolutely right.
+
+But every aspiring developer knows:
+
+> **That's simply not realistic.**
+
+So I started thinking:
+
+*What if I could build something that helps me take care of my eyes without interrupting my work?*
+
+That's how **EyeCare Buddy** was born.
+
+A small but meaningful Chrome extension that quietly runs in the background and encourages healthier screen habits.
 
 ---
 
 ## Features
 
-- **Active Browsing Time Tracker:** Tracks active tab browsing time and resets statistics daily.
-- **Break Reminders:** Displays native system notifications prompting you to take a break.
-- **Adaptive Break Intervals (Biofeedback):** Rates your current eye strain after each break to automatically adjust the next break duration:
-  - 😄 **No strain:** Extends the interval to **25 minutes**.
-  - 😐 **Mild strain:** Maintains the default **20 minutes** interval.
-  - 😣 **Severe strain:** Shortens the interval to **15 minutes** for more frequent rest.
-- **Modern Premium UI:** Designed with a sleek dark theme, glassmorphic card styles, status badges, and smooth interactive hover states.
-- **Privacy First:** All data is stored locally in your browser (`chrome.storage.local`). No browsing history or personal data is collected or sent to external servers.
+### Active Browsing Time Tracking
+
+Tracks how long you actively browse every day and maintains your statistics locally.
 
 ---
 
-## Directory Structure
+### Smart 20-20-20 Rule Reminders
 
-```text
-eyecare-buddy-extension/
-├── icons/                  # Extension PNG icons (16px, 32px, 48px, 128px)
-├── manifest.json           # Extension configuration (Manifest V3)
-├── background.js           # Background service worker for alarms/notifications
-├── popup.html              # Extension popup user interface
-├── popup.css               # Premium styles for the popup UI
-├── popup.js                # Frontend controller for popup logic and updates
-├── .gitignore              # Files to ignore in git version control
-└── LICENSE                 # Open-source license (MIT)
-```
+Get periodic reminders to follow the famous eye-care rule:
+
+> Every 20 minutes, look at something 20 feet away for 20 seconds.
+
+The goal is simple:
+
+Take tiny breaks before eye strain becomes a problem.
+
+---
+
+### Adaptive Break Intervals
+
+After each break, EyeCare Buddy asks:
+
+**"How are your eyes?"**
+
+😄 **No strain** → Next reminder in **25 minutes**
+
+😐 **Mild strain** → Next reminder in **20 minutes**
+
+😣 **Severe strain** → Next reminder in **15 minutes**
+
+The extension adapts to your feedback and adjusts future reminders accordingly.
+
+---
+
+### Popup Dashboard
+
+Keep track of:
+
+- Today's browsing time
+- Number of breaks taken
+- Countdown to the next break
+- Current reminder interval
+
+![Popup Dashboard](assets/popup.png)
+
+---
+
+### Native Chrome Notifications
+
+Gentle reminders that appear right when it's time to take a break.
+
+| Notification 1 | Notification 2 | Notification 3 |
+|---|---|---|
+| ![](assets/notification1.png) | ![](assets/notification2.png) | ![](assets/notification3.png) |
+
+---
+
+### Privacy First
+
+- No backend
+- No accounts
+- No analytics
+- No data collection
+
+Everything stays locally on your device.
+
+---
+
+## What This Project Means to Me
+
+EyeCare Buddy is not a complex project.
+
+It won't magically cure eye strain.
+
+But it represents something I strongly believe in:
+
+> Technology shouldn't just make us more productive.
+
+> It should also help us stay healthy while pursuing our ambitions.
+
+If this extension reminds someone to blink a little more, take a short break, or protect their eyes while building their dreams—
+
+**then EyeCare Buddy has already achieved its purpose.**
 
 ---
 
 ## Installation
 
-Since this extension is in development, you can load it as an "unpacked" extension in Google Chrome:
+1. Clone the repository
 
-1. **Download/Clone** this repository to your local machine.
-2. Open Google Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer mode** using the toggle switch in the top-right corner.
-4. Click the **Load unpacked** button in the top-left corner.
-5. Select the `eyecare-buddy-extension` directory.
-6. The EyeCare Buddy icon will now appear in your extensions list! Pin it to your toolbar for quick access.
+```bash
+git clone <repo-url>
+```
 
----
+2. Open Chrome and navigate to:
 
-## How It Works
+```text
+chrome://extensions
+```
 
-1. Once installed, EyeCare Buddy starts tracking your browsing time and schedules your first break.
-2. When the alarm fires, a native notification asks you to look away.
-3. Open the extension popup to view today's active browsing duration, total breaks taken, and a countdown timer.
-4. If a break was recently triggered, you'll be prompted to rate your eye strain. Clicking a rating will instantly reschedule your next break and update the timer badge.
+3. Enable **Developer Mode**
+
+4. Click **Load unpacked**
+
+5. Select the project folder
+
+6. Start protecting your eyes 
+
+## Contributions & Enhancements
+
+EyeCare Buddy started as a personal project to solve a real problem I face every day. I would love to see it grow with ideas from the community.
+
+Contributions, enhancements and feature suggestions are always welcome!
+
+Some ideas you can explore:
+
+- Build and maintain a **Firefox extension** version.
+- Extend support to other Chromium-based browsers.
+- Add richer analytics and eye health insights.
+- Improve the UI/UX and accessibility.
+- Introduce smarter reminder strategies.
+- Experiment with optional AI-powered or computer vision features.
+
+If you have an idea that can make digital wellness better, feel free to:
+
+- Open an issue
+- Submit a pull request
+- Fork the project and build upon it
+
+Let's build technology that helps people stay healthy while chasing their ambitions.
 
 ---
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for details.
+Licensed under the MIT License.
